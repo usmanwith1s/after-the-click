@@ -1,68 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#07080c">
-    <meta name="description" content="A little interactive experience.">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#07080c"
+    >
+
+    <meta
+        name="description"
+        content="A little interactive experience."
+    >
 
     <title>After the Click ✦</title>
 
+    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
+
 
 <body>
 
-<div id="cursorGlow"></div>
+<!-- =========================
+     AMBIENT BACKGROUND
+========================= -->
 
 <div class="background">
+
     <div class="noise"></div>
 
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
+    <div class="aurora aurora-one"></div>
+
+    <div class="aurora aurora-two"></div>
+
+    <div class="aurora aurora-three"></div>
 
     <div id="stars"></div>
+
 </div>
+
+
+<div id="cursorGlow"></div>
 
 
 <!-- =========================
      INTRO
 ========================= -->
 
-<main class="screen intro-screen" id="introScreen">
+<main
+    class="screen intro-screen"
+    id="introScreen"
+>
 
     <div class="intro-content">
 
-        <div class="small-symbol">✦</div>
+        <div class="orbit-symbol">
 
-        <p class="eyebrow" id="introEyebrow">
+            <span>✦</span>
+
+        </div>
+
+
+        <p
+            class="eyebrow"
+            id="introEyebrow"
+        >
             A tiny message
         </p>
 
+
         <h1>
+
             Hey,
+
             <br>
-            <span id="personName">you...</span>
+
+            <span id="personName">
+                you...
+            </span>
+
         </h1>
 
-        <p class="intro-text" id="introText">
+
+        <p
+            class="intro-text"
+            id="introText"
+        >
             Someone made something for you.
             <br>
             It would be rude not to open it.
         </p>
 
-        <button class="open-button" id="openButton">
 
-            <span>Open it</span>
+        <button
+            class="open-button"
+            id="openButton"
+        >
+
+            <span class="button-text">
+                Open it
+            </span>
 
             <span class="arrow">
                 →
@@ -70,11 +133,24 @@
 
         </button>
 
-        <p class="tiny-note">
-            <span>no account required</span>
-            <span>•</span>
-            <span>probably harmless</span>
-        </p>
+
+        <div class="tiny-note">
+
+            <span>NO ACCOUNT</span>
+
+            <span class="note-dot">
+                •
+            </span>
+
+            <span>NO CATCH</span>
+
+            <span class="note-dot">
+                •
+            </span>
+
+            <span>PROBABLY</span>
+
+        </div>
 
     </div>
 
@@ -82,28 +158,54 @@
 
 
 <!-- =========================
-     LOADING / REVEAL
+     LOADING
 ========================= -->
 
-<main class="screen loading-screen" id="loadingScreen">
+<main
+    class="screen loading-screen"
+    id="loadingScreen"
+>
 
     <div class="loading-content">
 
-        <div class="loader-ring">
-            <span></span>
+        <div class="loading-orbit">
+
+            <div class="loading-core">
+                ✦
+            </div>
+
+            <div class="orbit-ring ring-one"></div>
+
+            <div class="orbit-ring ring-two"></div>
+
         </div>
 
-        <p class="loading-title" id="loadingTitle">
+
+        <p class="loading-title">
             Preparing something...
         </p>
 
-        <p class="loading-status" id="loadingStatus">
+
+        <p
+            class="loading-status"
+            id="loadingStatus"
+        >
             Initializing
         </p>
 
+
         <div class="loading-bar">
+
             <div id="loadingProgress"></div>
+
         </div>
+
+
+        <p class="loading-percent">
+            <span id="loadingPercent">
+                0
+            </span>%
+        </p>
 
     </div>
 
@@ -114,96 +216,206 @@
      MESSAGE
 ========================= -->
 
-<main class="screen message-screen" id="messageScreen">
+<main
+    class="screen message-screen"
+    id="messageScreen"
+>
 
     <div class="message-wrapper">
+
+
+        <!-- CARD -->
 
         <div
             class="message-card"
             id="messageCard"
         >
 
+            <div class="card-glow"></div>
+
+            <div class="card-border"></div>
+
             <div class="card-shine"></div>
+
+
+            <!-- TOP -->
 
             <div class="card-top">
 
-                <span class="card-symbol">
+                <div class="card-icon">
                     ✦
-                </span>
+                </div>
 
-                <span
-                    class="card-label"
-                    id="cardLabel"
-                >
-                    JUST FOR YOU
-                </span>
 
-                <span
-                    class="card-number"
-                    id="cardNumber"
-                >
-                    01
-                </span>
+                <div class="card-meta">
+
+                    <span
+                        class="card-label"
+                        id="cardLabel"
+                    >
+                        JUST FOR YOU
+                    </span>
+
+                    <span class="card-recipient">
+
+                        FOR
+                        <strong id="cardRecipient">
+                            YOU
+                        </strong>
+
+                    </span>
+
+                </div>
+
+
+                <div class="card-number">
+
+                    <span>01</span>
+
+                    <i></i>
+
+                    <span>02</span>
+
+                </div>
 
             </div>
 
 
+            <!-- CONTENT -->
+
             <div class="message-content">
 
-                <p class="message-intro">
-                    Okay...
-                </p>
-
-                <h2 id="messageTitle">
-                    You actually opened it.
-                </h2>
 
                 <p
-                    class="typing-text"
-                    id="typingText"
-                ></p>
+                    class="message-intro"
+                    id="messageIntro"
+                >
+                    Okay... you made it this far.
+                </p>
 
-                <div class="divider"></div>
+
+                <h2 id="messageTitle">
+
+                    You actually opened it.
+
+                </h2>
+
+
+                <div class="typing-area">
+
+                    <p
+                        class="typing-text"
+                        id="typingText"
+                    ></p>
+
+                    <span class="typing-cursor"></span>
+
+                </div>
+
+
+                <div class="divider">
+
+                    <span></span>
+
+                </div>
+
 
                 <p
                     class="final-line"
                     id="finalLine"
                 >
-                    Some things are more fun when they're made
-                    instead of said.
+                    Some things are more fun when they're
+                    made instead of said.
                 </p>
+
 
             </div>
 
+
+            <!-- FOOTER -->
 
             <div class="card-footer">
 
-                <span>
-                    made with code
-                </span>
+                <div class="footer-left">
 
-                <span class="signature">
+                    <span class="footer-dot"></span>
+
+                    <span>
+                        TRANSMISSION RECEIVED
+                    </span>
+
+                </div>
+
+
+                <div class="signature">
                     Usman.
-                </span>
+                </div>
 
             </div>
+
+
+            <!-- DECORATIVE CORNERS -->
+
+            <span class="corner corner-tl"></span>
+
+            <span class="corner corner-tr"></span>
+
+            <span class="corner corner-bl"></span>
+
+            <span class="corner corner-br"></span>
 
         </div>
 
 
-        <button
-            class="surprise-button"
-            id="surpriseButton"
-        >
-            <span id="surpriseText">
-                There's more
-            </span>
+        <!-- CARD ACTIONS -->
 
-            <span>
-                ✦
-            </span>
+        <div class="message-actions">
 
-        </button>
+
+            <button
+                class="spark-action"
+                id="sparkMessageButton"
+            >
+
+                <span class="spark-icon">
+                    ✦
+                </span>
+
+                <span>
+                    make it sparkle
+                </span>
+
+            </button>
+
+
+            <button
+                class="surprise-button"
+                id="surpriseButton"
+            >
+
+                <span id="surpriseText">
+                    There's more
+                </span>
+
+                <span class="surprise-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+        <div class="message-hint">
+
+            <span>KEEP GOING</span>
+
+            <span class="hint-line"></span>
+
+            <span>01 / 02</span>
+
+        </div>
 
     </div>
 
@@ -214,24 +426,36 @@
      FINAL
 ========================= -->
 
-<main class="screen final-screen" id="finalScreen">
+<main
+    class="screen final-screen"
+    id="finalScreen"
+>
 
     <div class="final-content">
 
-        <div
+
+        <button
             class="final-symbol"
             id="finalSymbol"
+            aria-label="Secret sparkle"
         >
-            ✦
-        </div>
+
+            <span>
+                ✦
+            </span>
+
+        </button>
+
 
         <p class="eyebrow">
             Mission complete
         </p>
 
+
         <h2 id="finalTitle">
             That's it.
         </h2>
+
 
         <p
             class="final-message"
@@ -242,36 +466,62 @@
         </p>
 
 
+        <div class="final-line-decoration">
+
+            <span></span>
+
+            <i>✦</i>
+
+            <span></span>
+
+        </div>
+
+
         <div class="final-actions">
 
             <button
                 class="restart-button"
                 id="restartButton"
             >
-                See it again ↗
+
+                <span>
+                    ↻
+                </span>
+
+                See it again
+
             </button>
+
 
             <button
                 class="spark-button"
                 id="sparkButton"
-                aria-label="Create some sparkles"
+                aria-label="Create sparkles"
             >
+
                 ✦
+
             </button>
 
         </div>
 
 
         <p class="credit">
+
             crafted with code by
-            <strong>Usman</strong>
+
+            <strong>
+                Usman
+            </strong>
+
         </p>
+
 
         <p
             class="secret-hint"
             id="secretHint"
         >
-            Psst... try clicking the star.
+            Psst... the star does something.
         </p>
 
     </div>
@@ -279,10 +529,13 @@
 </main>
 
 
+<!-- PARTICLES -->
+
 <div id="particleContainer"></div>
 
 
 <script src="js/script.js"></script>
 
 </body>
+
 </html>
