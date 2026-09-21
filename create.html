@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Your Experience</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <main class="creator-page">
+
+        <div class="creator-card">
+
+            <div class="creator-badge">
+                AFTER THE CLICK
+            </div>
+
+            <h1>Create a surprise.</h1>
+
+            <p class="creator-subtitle">
+                Personalize the experience, generate the link,
+                and send it to someone.
+            </p>
+
+            <div class="creator-form">
+
+                <label for="personName">Their name</label>
+
+                <input
+                    type="text"
+                    id="personName"
+                    placeholder="e.g. Sara"
+                    autocomplete="off"
+                >
+
+                <label for="personType">Who are they?</label>
+
+                <select id="personType">
+                    <option value="friend">Friend</option>
+                    <option value="sister">Sister</option>
+                    <option value="cousin">Cousin</option>
+                    <option value="birthday">Birthday</option>
+                </select>
+
+                <button id="generateBtn">
+                    Generate Experience ✨
+                </button>
+
+            </div>
+
+            <div id="result" class="creator-result">
+
+                <p>Your personalized link will appear here.</p>
+
+            </div>
+
+            <p class="creator-note">
+                They won't need to enter anything.
+                Just send them the generated link.
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="js/create.js"></script>
+
+</body>
+</html>
