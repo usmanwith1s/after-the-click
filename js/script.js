@@ -1,16 +1,26 @@
-/* =========================
+/* =========================================
    URL PERSONALIZATION
-========================= */
+========================================= */
 
-const params = new URLSearchParams(window.location.search);
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
 
-const nameFromURL = params.get("name");
-const typeFromURL = params.get("type");
+
+const nameFromURL =
+    params.get("name");
+
+
+const typeFromURL =
+    params.get("type");
+
 
 const name =
     nameFromURL
         ? decodeURIComponent(nameFromURL)
         : "you";
+
 
 const type =
     typeFromURL
@@ -18,21 +28,25 @@ const type =
         : "friend";
 
 
-/* =========================
+/* =========================================
    EXPERIENCE DATA
-========================= */
+========================================= */
 
 const experiences = {
 
     friend: {
 
-        introEyebrow: "A tiny message",
+        introEyebrow:
+            "A tiny message",
 
         introText:
             "Someone made something for you.<br>It would be rude not to open it.",
 
         label:
             "JUST FOR YOU",
+
+        messageIntro:
+            "Okay... you made it this far.",
 
         title:
             "You actually opened it.",
@@ -66,6 +80,9 @@ const experiences = {
         label:
             "SIBLING EDITION",
 
+        messageIntro:
+            "Okay... don't get emotional.",
+
         title:
             "You found it.",
 
@@ -97,6 +114,9 @@ const experiences = {
 
         label:
             "COUSIN EDITION",
+
+        messageIntro:
+            "Well... you clicked it.",
 
         title:
             "You fell for it.",
@@ -130,6 +150,9 @@ const experiences = {
         label:
             "BIRTHDAY EDITION",
 
+        messageIntro:
+            "Okay... this one is special.",
+
         title:
             "Today is yours.",
 
@@ -153,224 +176,406 @@ const experiences = {
 };
 
 
-/* =========================
+/* =========================================
    SELECT EXPERIENCE
-========================= */
+========================================= */
 
 const experience =
-    experiences[type] || experiences.friend;
+    experiences[type]
+    || experiences.friend;
 
 
-/* =========================
+/* =========================================
    ELEMENTS
-========================= */
+========================================= */
 
 const introScreen =
-    document.getElementById("introScreen");
+    document.getElementById(
+        "introScreen"
+    );
+
 
 const loadingScreen =
-    document.getElementById("loadingScreen");
+    document.getElementById(
+        "loadingScreen"
+    );
+
 
 const messageScreen =
-    document.getElementById("messageScreen");
+    document.getElementById(
+        "messageScreen"
+    );
+
 
 const finalScreen =
-    document.getElementById("finalScreen");
+    document.getElementById(
+        "finalScreen"
+    );
+
 
 const openButton =
-    document.getElementById("openButton");
+    document.getElementById(
+        "openButton"
+    );
+
 
 const surpriseButton =
-    document.getElementById("surpriseButton");
+    document.getElementById(
+        "surpriseButton"
+    );
+
 
 const restartButton =
-    document.getElementById("restartButton");
+    document.getElementById(
+        "restartButton"
+    );
+
 
 const sparkButton =
-    document.getElementById("sparkButton");
+    document.getElementById(
+        "sparkButton"
+    );
+
+
+const sparkMessageButton =
+    document.getElementById(
+        "sparkMessageButton"
+    );
+
 
 const personName =
-    document.getElementById("personName");
+    document.getElementById(
+        "personName"
+    );
+
 
 const introEyebrow =
-    document.getElementById("introEyebrow");
+    document.getElementById(
+        "introEyebrow"
+    );
+
 
 const introText =
-    document.getElementById("introText");
+    document.getElementById(
+        "introText"
+    );
+
 
 const cardLabel =
-    document.getElementById("cardLabel");
+    document.getElementById(
+        "cardLabel"
+    );
+
+
+const cardRecipient =
+    document.getElementById(
+        "cardRecipient"
+    );
+
+
+const messageIntro =
+    document.getElementById(
+        "messageIntro"
+    );
+
 
 const messageTitle =
-    document.getElementById("messageTitle");
+    document.getElementById(
+        "messageTitle"
+    );
+
 
 const typingText =
-    document.getElementById("typingText");
+    document.getElementById(
+        "typingText"
+    );
+
 
 const finalLine =
-    document.getElementById("finalLine");
+    document.getElementById(
+        "finalLine"
+    );
+
 
 const finalTitle =
-    document.getElementById("finalTitle");
+    document.getElementById(
+        "finalTitle"
+    );
+
 
 const finalMessage =
-    document.getElementById("finalMessage");
+    document.getElementById(
+        "finalMessage"
+    );
+
 
 const surpriseText =
-    document.getElementById("surpriseText");
+    document.getElementById(
+        "surpriseText"
+    );
+
 
 const loadingStatus =
-    document.getElementById("loadingStatus");
+    document.getElementById(
+        "loadingStatus"
+    );
+
 
 const loadingProgress =
-    document.getElementById("loadingProgress");
+    document.getElementById(
+        "loadingProgress"
+    );
+
+
+const loadingPercent =
+    document.getElementById(
+        "loadingPercent"
+    );
+
 
 const starsContainer =
-    document.getElementById("stars");
+    document.getElementById(
+        "stars"
+    );
+
 
 const cursorGlow =
-    document.getElementById("cursorGlow");
+    document.getElementById(
+        "cursorGlow"
+    );
+
 
 const messageCard =
-    document.getElementById("messageCard");
+    document.getElementById(
+        "messageCard"
+    );
+
 
 const particleContainer =
-    document.getElementById("particleContainer");
+    document.getElementById(
+        "particleContainer"
+    );
+
 
 const finalSymbol =
-    document.getElementById("finalSymbol");
+    document.getElementById(
+        "finalSymbol"
+    );
 
 
-/* =========================
+/* =========================================
    PERSONALIZE PAGE
-========================= */
+========================================= */
 
 personName.textContent =
     name !== "you"
         ? name + "..."
         : "you...";
 
+
+cardRecipient.textContent =
+    name !== "you"
+        ? name.toUpperCase()
+        : "YOU";
+
+
 introEyebrow.textContent =
     experience.introEyebrow;
+
 
 introText.innerHTML =
     experience.introText;
 
+
 cardLabel.textContent =
     experience.label;
+
+
+messageIntro.textContent =
+    experience.messageIntro;
+
 
 messageTitle.textContent =
     experience.title;
 
+
 finalLine.textContent =
     experience.finalLine;
+
 
 finalTitle.textContent =
     experience.finalTitle;
 
+
 finalMessage.textContent =
     experience.finalMessage;
+
 
 surpriseText.textContent =
     experience.button;
 
 
-/* =========================
-   STARS
-========================= */
+/* =========================================
+   CREATE STARS
+========================================= */
 
 function createStars() {
 
     const amount =
         window.innerWidth < 600
             ? 45
-            : 80;
+            : 90;
 
-    for (let i = 0; i < amount; i++) {
+
+    for (
+        let i = 0;
+        i < amount;
+        i++
+    ) {
 
         const star =
-            document.createElement("span");
+            document.createElement(
+                "span"
+            );
+
 
         star.className =
             "star";
 
+
         star.style.left =
             `${Math.random() * 100}%`;
+
 
         star.style.top =
             `${Math.random() * 100}%`;
 
+
         const size =
             Math.random() * 2 + 1;
+
 
         star.style.width =
             `${size}px`;
 
+
         star.style.height =
             `${size}px`;
+
 
         star.style.animationDelay =
             `${Math.random() * 5}s`;
 
-        starsContainer.appendChild(star);
+
+        starsContainer.appendChild(
+            star
+        );
+
     }
+
 }
+
 
 createStars();
 
 
-/* =========================
+/* =========================================
    TYPEWRITER
-========================= */
+========================================= */
+
+let typingTimer = null;
+
 
 function typeMessage() {
 
-    typingText.textContent = "";
+    clearTimeout(typingTimer);
+
+
+    typingText.textContent =
+        "";
+
 
     let index = 0;
 
-    const speed = 28;
+
+    const speed = 27;
+
 
     function typeNext() {
 
-        if (index >= experience.message.length) {
+        if (
+            index >=
+            experience.message.length
+        ) {
+
             return;
+
         }
+
 
         typingText.textContent +=
             experience.message[index];
 
+
         index++;
 
-        setTimeout(
-            typeNext,
-            speed
-        );
+
+        typingTimer =
+            setTimeout(
+                typeNext,
+                speed
+            );
+
     }
 
+
     typeNext();
+
 }
 
 
-/* =========================
-   LOADING SEQUENCE
-========================= */
+/* =========================================
+   LOADING
+========================================= */
 
 function startLoading() {
 
-    loadingScreen.classList.add("visible");
+    loadingScreen.classList.add(
+        "visible"
+    );
+
 
     const statuses = [
+
         "Initializing",
+
         "Finding something special",
+
         "Polishing pixels",
+
         "Adding unnecessary animations",
+
         "Almost ready"
+
     ];
+
 
     let progress = 0;
 
     let statusIndex = 0;
+
+
+    loadingProgress.style.width =
+        "0%";
+
+
+    loadingPercent.textContent =
+        "0";
+
+
+    loadingStatus.textContent =
+        statuses[0];
+
 
     const interval =
         setInterval(() => {
@@ -378,11 +583,17 @@ function startLoading() {
             progress +=
                 Math.random() * 7 + 4;
 
-            if (progress >= 100) {
+
+            if (
+                progress >= 100
+            ) {
 
                 progress = 100;
 
-                clearInterval(interval);
+                clearInterval(
+                    interval
+                );
+
 
                 setTimeout(() => {
 
@@ -390,47 +601,69 @@ function startLoading() {
                         "visible"
                     );
 
+
                     setTimeout(() => {
 
                         messageScreen.classList.add(
                             "visible"
                         );
 
+
                         setTimeout(
                             typeMessage,
-                            650
+                            700
                         );
 
-                    }, 400);
+
+                    }, 450);
+
 
                 }, 500);
+
             }
+
 
             loadingProgress.style.width =
                 `${progress}%`;
 
+
+            loadingPercent.textContent =
+                Math.floor(progress);
+
+
             const newIndex =
                 Math.min(
-                    Math.floor(progress / 20),
+                    Math.floor(
+                        progress / 20
+                    ),
                     statuses.length - 1
                 );
 
-            if (newIndex !== statusIndex) {
+
+            if (
+                newIndex !==
+                statusIndex
+            ) {
 
                 statusIndex =
                     newIndex;
 
+
                 loadingStatus.textContent =
-                    statuses[statusIndex];
+                    statuses[
+                        statusIndex
+                    ];
+
             }
 
         }, 180);
+
 }
 
 
-/* =========================
-   OPEN
-========================= */
+/* =========================================
+   OPEN EXPERIENCE
+========================================= */
 
 openButton.addEventListener(
     "click",
@@ -439,24 +672,27 @@ openButton.addEventListener(
         createParticles(
             event.clientX,
             event.clientY,
-            18
+            22
         );
+
 
         introScreen.classList.add(
             "hidden"
         );
 
+
         setTimeout(
             startLoading,
-            550
+            500
         );
+
     }
 );
 
 
-/* =========================
-   SURPRISE
-========================= */
+/* =========================================
+   NEXT MESSAGE
+========================================= */
 
 surpriseButton.addEventListener(
     "click",
@@ -465,12 +701,14 @@ surpriseButton.addEventListener(
         createParticles(
             event.clientX,
             event.clientY,
-            25
+            30
         );
+
 
         messageScreen.classList.remove(
             "visible"
         );
+
 
         setTimeout(() => {
 
@@ -478,14 +716,72 @@ surpriseButton.addEventListener(
                 "visible"
             );
 
-        }, 500);
+
+            createParticles(
+                window.innerWidth / 2,
+                window.innerHeight / 2,
+                35
+            );
+
+
+        }, 550);
+
     }
 );
 
 
-/* =========================
+/* =========================================
+   MESSAGE SPARKLE BUTTON
+========================================= */
+
+sparkMessageButton.addEventListener(
+    "click",
+    () => {
+
+        const rect =
+            sparkMessageButton
+                .getBoundingClientRect();
+
+
+        createParticles(
+            rect.left + rect.width / 2,
+            rect.top + rect.height / 2,
+            45
+        );
+
+
+        sparkMessageButton
+            .querySelector(
+                ".spark-icon"
+            )
+            .animate(
+                [
+                    {
+                        transform:
+                            "rotate(0deg) scale(1)"
+                    },
+                    {
+                        transform:
+                            "rotate(180deg) scale(1.5)"
+                    },
+                    {
+                        transform:
+                            "rotate(360deg) scale(1)"
+                    }
+                ],
+                {
+                    duration: 600,
+                    easing: "ease-out"
+                }
+            );
+
+    }
+);
+
+
+/* =========================================
    RESTART
-========================= */
+========================================= */
 
 restartButton.addEventListener(
     "click",
@@ -495,6 +791,29 @@ restartButton.addEventListener(
             "visible"
         );
 
+
+        messageScreen.classList.remove(
+            "visible"
+        );
+
+
+        loadingScreen.classList.remove(
+            "visible"
+        );
+
+
+        loadingProgress.style.width =
+            "0%";
+
+
+        loadingPercent.textContent =
+            "0";
+
+
+        typingText.textContent =
+            "";
+
+
         setTimeout(() => {
 
             introScreen.classList.remove(
@@ -502,13 +821,14 @@ restartButton.addEventListener(
             );
 
         }, 500);
+
     }
 );
 
 
-/* =========================
+/* =========================================
    PARTICLES
-========================= */
+========================================= */
 
 function createParticles(
     x,
@@ -523,61 +843,88 @@ function createParticles(
     ) {
 
         const particle =
-            document.createElement("span");
+            document.createElement(
+                "span"
+            );
+
 
         particle.className =
             "particle";
 
+
         particle.style.left =
             `${x}px`;
+
 
         particle.style.top =
             `${y}px`;
 
+
         const angle =
-            Math.random() * Math.PI * 2;
+            Math.random() *
+            Math.PI *
+            2;
+
 
         const distance =
-            40 + Math.random() * 130;
+            40 +
+            Math.random() *
+            140;
+
 
         const moveX =
-            Math.cos(angle) * distance;
+            Math.cos(angle) *
+            distance;
+
 
         const moveY =
-            Math.sin(angle) * distance;
+            Math.sin(angle) *
+            distance;
+
 
         particle.style.setProperty(
             "--x",
             `${moveX}px`
         );
 
+
         particle.style.setProperty(
             "--y",
             `${moveY}px`
         );
 
+
+        const size =
+            Math.random() * 4 + 2;
+
+
         particle.style.width =
-            `${Math.random() * 4 + 2}px`;
+            `${size}px`;
+
 
         particle.style.height =
-            particle.style.width;
+            `${size}px`;
+
 
         particleContainer.appendChild(
             particle
         );
+
 
         setTimeout(() => {
 
             particle.remove();
 
         }, 950);
+
     }
+
 }
 
 
-/* =========================
-   SPARK BUTTON
-========================= */
+/* =========================================
+   FINAL SPARK
+========================================= */
 
 sparkButton.addEventListener(
     "click",
@@ -586,20 +933,41 @@ sparkButton.addEventListener(
         const rect =
             sparkButton.getBoundingClientRect();
 
+
         createParticles(
             rect.left + rect.width / 2,
             rect.top + rect.height / 2,
-            50
+            60
         );
+
+
+        sparkButton.animate(
+            [
+                {
+                    transform:
+                        "scale(1)"
+                },
+                {
+                    transform:
+                        "scale(1.25) rotate(20deg)"
+                },
+                {
+                    transform:
+                        "scale(1)"
+                }
+            ],
+            {
+                duration: 500
+            }
+        );
+
     }
 );
 
 
-/* =========================
-   FINAL STAR
-========================= */
-
-let secretActivated = false;
+/* =========================================
+   SECRET STAR
+========================================= */
 
 finalSymbol.addEventListener(
     "click",
@@ -608,53 +976,80 @@ finalSymbol.addEventListener(
         createParticles(
             event.clientX,
             event.clientY,
-            70
+            80
         );
 
-        finalSymbol.style.transform =
-            "rotate(360deg) scale(1.25)";
 
-        setTimeout(() => {
+        finalSymbol.animate(
+            [
+                {
+                    transform:
+                        "rotate(0deg) scale(1)"
+                },
+                {
+                    transform:
+                        "rotate(180deg) scale(1.3)"
+                },
+                {
+                    transform:
+                        "rotate(360deg) scale(1)"
+                }
+            ],
+            {
+                duration: 700,
+                easing: "ease-out"
+            }
+        );
 
-            finalSymbol.style.transform =
-                "";
-
-        }, 500);
-
-        secretActivated = true;
     }
 );
 
 
-/* =========================
+/* =========================================
    MOUSE GLOW
-========================= */
+========================================= */
 
 document.addEventListener(
     "mousemove",
     (event) => {
 
+        if (!cursorGlow) {
+            return;
+        }
+
+
         cursorGlow.style.left =
             `${event.clientX}px`;
+
 
         cursorGlow.style.top =
             `${event.clientY}px`;
 
+
         const x =
-            (event.clientX /
-                window.innerWidth - 0.5) * 20;
+            (
+                event.clientX /
+                window.innerWidth -
+                0.5
+            ) * 20;
+
 
         const y =
-            (event.clientY /
-                window.innerHeight - 0.5) * 20;
+            (
+                event.clientY /
+                window.innerHeight -
+                0.5
+            ) * 20;
+
 
         document
-            .querySelector(".glow-one")
+            .querySelector(".aurora-one")
             .style.transform =
             `translate(${x}px, ${y}px)`;
 
+
         document
-            .querySelector(".glow-two")
+            .querySelector(".aurora-two")
             .style.transform =
             `translate(${-x}px, ${-y}px)`;
 
@@ -662,50 +1057,74 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =========================================
    CARD 3D EFFECT
-========================= */
+========================================= */
 
 messageCard.addEventListener(
     "mousemove",
     (event) => {
 
-        if (window.innerWidth < 700) {
+        if (
+            window.innerWidth < 700
+        ) {
+
             return;
+
         }
+
 
         const rect =
             messageCard.getBoundingClientRect();
 
+
         const x =
-            event.clientX - rect.left;
+            event.clientX -
+            rect.left;
+
 
         const y =
-            event.clientY - rect.top;
+            event.clientY -
+            rect.top;
+
 
         const rotateY =
-            ((x / rect.width) - 0.5) * 7;
+            (
+                x / rect.width -
+                0.5
+            ) * 7;
+
 
         const rotateX =
-            ((y / rect.height) - 0.5) * -7;
+            (
+                y / rect.height -
+                0.5
+            ) * -7;
+
 
         messageCard.style.transform =
-            `perspective(1000px)
+            `perspective(1200px)
              rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)`;
+             rotateY(${rotateY}deg)
+             translateZ(3px)`;
+
 
         const shine =
             messageCard.querySelector(
                 ".card-shine"
             );
 
+
         shine.style.left =
             `${x}px`;
 
+
         shine.style.top =
             `${y}px`;
+
     }
 );
+
 
 messageCard.addEventListener(
     "mouseleave",
@@ -718,9 +1137,9 @@ messageCard.addEventListener(
 );
 
 
-/* =========================
+/* =========================================
    TOUCH PARTICLES
-========================= */
+========================================= */
 
 document.addEventListener(
     "touchstart",
@@ -729,11 +1148,13 @@ document.addEventListener(
         const touch =
             event.touches[0];
 
+
         createParticles(
             touch.clientX,
             touch.clientY,
-            8
+            7
         );
+
     },
     {
         passive: true
