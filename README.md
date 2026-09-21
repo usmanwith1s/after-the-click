@@ -57,7 +57,7 @@ The generated URL contains the personalization information.
 
 Example:
 
-```text
+
 https://usmanwith1s.github.io/after-the-click/?name=Sara&type=friend
 
 Another example:
