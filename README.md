@@ -155,15 +155,3 @@ Feel free to explore the code, customize the experience, and create your own ver
 Made with code, curiosity, and a little bit of ✦.
 
 
-### Step 5
-
-Scroll down.
-
-You'll see the commit section.
-
-Put something like:
-
-**Commit message:**
-
-```text
-Add project README
