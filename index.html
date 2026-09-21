@@ -1,142 +1,288 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#08090d">
-    <meta name="description" content="A little interactive surprise.">
+    <meta name="theme-color" content="#07080c">
+    <meta name="description" content="A little interactive experience.">
 
     <title>After the Click ✦</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Ambient background -->
-    <div class="background">
-        <div class="glow glow-one"></div>
-        <div class="glow glow-two"></div>
-        <div class="stars" id="stars"></div>
+<div id="cursorGlow"></div>
+
+<div class="background">
+    <div class="noise"></div>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <div id="stars"></div>
+</div>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<main class="screen intro-screen" id="introScreen">
+
+    <div class="intro-content">
+
+        <div class="small-symbol">✦</div>
+
+        <p class="eyebrow" id="introEyebrow">
+            A tiny message
+        </p>
+
+        <h1>
+            Hey,
+            <br>
+            <span id="personName">you...</span>
+        </h1>
+
+        <p class="intro-text" id="introText">
+            Someone made something for you.
+            <br>
+            It would be rude not to open it.
+        </p>
+
+        <button class="open-button" id="openButton">
+
+            <span>Open it</span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+        <p class="tiny-note">
+            <span>no account required</span>
+            <span>•</span>
+            <span>probably harmless</span>
+        </p>
+
     </div>
 
-    <!-- Opening screen -->
-    <main class="screen intro-screen" id="introScreen">
+</main>
 
-        <div class="intro-content">
 
-            <div class="small-symbol">✦</div>
+<!-- =========================
+     LOADING / REVEAL
+========================= -->
 
-            <p class="eyebrow">A tiny message</p>
+<main class="screen loading-screen" id="loadingScreen">
 
-            <h1>
-                Hey,<br>
-                <span>wait...</span>
-            </h1>
+    <div class="loading-content">
 
-            <p class="intro-text">
-                I made something for you.
-                <br>
-                Nothing serious. Promise.
-            </p>
-
-            <button class="open-button" id="openButton">
-                <span>Open it</span>
-                <span class="arrow">→</span>
-            </button>
-
+        <div class="loader-ring">
+            <span></span>
         </div>
 
-    </main>
+        <p class="loading-title" id="loadingTitle">
+            Preparing something...
+        </p>
+
+        <p class="loading-status" id="loadingStatus">
+            Initializing
+        </p>
+
+        <div class="loading-bar">
+            <div id="loadingProgress"></div>
+        </div>
+
+    </div>
+
+</main>
 
 
-    <!-- Message screen -->
-    <main class="screen message-screen" id="messageScreen">
+<!-- =========================
+     MESSAGE
+========================= -->
 
-        <div class="message-wrapper">
+<main class="screen message-screen" id="messageScreen">
 
-            <div class="message-card">
+    <div class="message-wrapper">
 
-                <div class="card-top">
-                    <span class="card-symbol">✦</span>
-                    <span class="card-label">JUST FOR YOU</span>
-                </div>
+        <div
+            class="message-card"
+            id="messageCard"
+        >
 
-                <div class="message-content">
+            <div class="card-shine"></div>
 
-                    <p class="message-intro">
-                        Okay...
-                    </p>
+            <div class="card-top">
 
-                    <h2 id="messageTitle">
-                        You actually opened it.
-                    </h2>
+                <span class="card-symbol">
+                    ✦
+                </span>
 
-                    <p class="typing-text" id="typingText"></p>
+                <span
+                    class="card-label"
+                    id="cardLabel"
+                >
+                    JUST FOR YOU
+                </span>
 
-                    <div class="divider"></div>
-
-                    <p class="final-line">
-                        Some things are more fun when they're made instead of said.
-                    </p>
-
-                </div>
-
-                <div class="card-footer">
-                    <span>made with code</span>
-                    <span class="signature">Usman.</span>
-                </div>
+                <span
+                    class="card-number"
+                    id="cardNumber"
+                >
+                    01
+                </span>
 
             </div>
 
-            <button class="surprise-button" id="surpriseButton">
-                <span>One more thing</span>
-                <span>✦</span>
-            </button>
+
+            <div class="message-content">
+
+                <p class="message-intro">
+                    Okay...
+                </p>
+
+                <h2 id="messageTitle">
+                    You actually opened it.
+                </h2>
+
+                <p
+                    class="typing-text"
+                    id="typingText"
+                ></p>
+
+                <div class="divider"></div>
+
+                <p
+                    class="final-line"
+                    id="finalLine"
+                >
+                    Some things are more fun when they're made
+                    instead of said.
+                </p>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span>
+                    made with code
+                </span>
+
+                <span class="signature">
+                    Usman.
+                </span>
+
+            </div>
 
         </div>
 
-    </main>
+
+        <button
+            class="surprise-button"
+            id="surpriseButton"
+        >
+            <span id="surpriseText">
+                There's more
+            </span>
+
+            <span>
+                ✦
+            </span>
+
+        </button>
+
+    </div>
+
+</main>
 
 
-    <!-- Final surprise -->
-    <main class="screen final-screen" id="finalScreen">
+<!-- =========================
+     FINAL
+========================= -->
 
-        <div class="final-content">
+<main class="screen final-screen" id="finalScreen">
 
-            <div class="final-symbol" id="finalSymbol">✦</div>
+    <div class="final-content">
 
-            <p class="eyebrow">That's it.</p>
+        <div
+            class="final-symbol"
+            id="finalSymbol"
+        >
+            ✦
+        </div>
 
-            <h2>
-                Hope this<br>
-                made you smile.
-            </h2>
+        <p class="eyebrow">
+            Mission complete
+        </p>
 
-            <p class="final-message">
-                You can close this now.<br>
-                Or pretend you never opened it. 😌
-            </p>
+        <h2 id="finalTitle">
+            That's it.
+        </h2>
 
-            <button class="restart-button" id="restartButton">
+        <p
+            class="final-message"
+            id="finalMessage"
+        >
+            Hope this little corner of the internet
+            made your day a little better.
+        </p>
+
+
+        <div class="final-actions">
+
+            <button
+                class="restart-button"
+                id="restartButton"
+            >
                 See it again ↗
             </button>
 
-            <p class="credit">
-                crafted by <strong>Usman</strong>
-            </p>
+            <button
+                class="spark-button"
+                id="sparkButton"
+                aria-label="Create some sparkles"
+            >
+                ✦
+            </button>
 
         </div>
 
-    </main>
+
+        <p class="credit">
+            crafted with code by
+            <strong>Usman</strong>
+        </p>
+
+        <p
+            class="secret-hint"
+            id="secretHint"
+        >
+            Psst... try clicking the star.
+        </p>
+
+    </div>
+
+</main>
 
 
-    <script src="js/script.js"></script>
+<div id="particleContainer"></div>
+
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
