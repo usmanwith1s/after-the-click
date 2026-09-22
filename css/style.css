@@ -2251,3 +2251,321 @@ h1 span {
     }
 
 }
+/* =========================================
+   CREATOR PAGE
+========================================= */
+
+.creator-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.creator-card {
+    width: min(520px, 100%);
+    padding: 48px;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.065),
+            rgba(255,255,255,0.018)
+        );
+
+    box-shadow:
+        0 40px 120px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.creator-card::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -150px;
+    right: -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(150,140,255,0.13),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+.creator-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 25%,
+            rgba(255,255,255,0.05),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+.creator-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+
+    color: rgba(255,255,255,0.4);
+
+    font-size: 8px;
+    letter-spacing: 2.5px;
+
+    margin-bottom: 24px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+.creator-card h1 {
+    position: relative;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: clamp(48px, 8vw, 68px);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -4px;
+
+    margin-bottom: 20px;
+}
+
+.creator-subtitle {
+    position: relative;
+
+    max-width: 390px;
+
+    color: rgba(255,255,255,0.4);
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    margin-bottom: 38px;
+}
+
+.creator-form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.creator-form label {
+    margin-top: 8px;
+
+    color: rgba(255,255,255,0.42);
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.creator-form input,
+.creator-form select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.035);
+
+    color: rgba(255,255,255,0.8);
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.creator-form input::placeholder {
+    color: rgba(255,255,255,0.2);
+}
+
+.creator-form input:focus,
+.creator-form select:focus {
+    border-color: rgba(160,150,255,0.35);
+
+    background: rgba(255,255,255,0.055);
+
+    box-shadow:
+        0 0 0 4px rgba(150,140,255,0.05);
+}
+
+.creator-form select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+.creator-form select option {
+    background: #15151c;
+    color: white;
+}
+
+.creator-form button {
+    margin-top: 20px;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+
+    background: rgba(255,255,255,0.92);
+
+    color: #111;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.creator-form button:hover {
+    transform: translateY(-3px);
+
+    background: white;
+
+    box-shadow:
+        0 15px 35px rgba(255,255,255,0.12);
+}
+
+.creator-form button:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.creator-result {
+    position: relative;
+
+    margin-top: 22px;
+    padding: 16px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.018);
+
+    color: rgba(255,255,255,0.3);
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    word-break: break-word;
+}
+
+.creator-result a {
+    color: rgba(190,185,255,0.85);
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.creator-result a:hover {
+    color: white;
+}
+
+.creator-result button {
+    margin-top: 12px;
+
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+
+    background: rgba(255,255,255,0.04);
+
+    color: rgba(255,255,255,0.55);
+
+    font-family: inherit;
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.creator-note {
+    position: relative;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.15);
+
+    font-size: 8px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CREATOR MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .creator-page {
+        padding: 18px;
+    }
+
+    .creator-card {
+        padding: 32px 24px;
+        border-radius: 25px;
+    }
+
+    .creator-card h1 {
+        font-size: clamp(43px, 13vw, 58px);
+        letter-spacing: -3px;
+    }
+
+    .creator-subtitle {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+}
